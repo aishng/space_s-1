@@ -1,7 +1,11 @@
 'use strict';
 
-var React = require('react/addons');
-var ReactTransitionGroup = React.addons.TransitionGroup;
+var React   = require('react/addons'),
+    Filter  = require('./Filter'),
+    Search  = require('./Search'),
+    Map     = require('./Map'),
+    Result  = require('./Result');
+
 
 // Export React so the devtools can find it
 (window !== window.top ? window.top : window).React = React;
@@ -10,15 +14,25 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 require('../../styles/normalize.css');
 require('../../styles/main.css');
 
-var imageURL = require('../../images/yeoman.png');
-
 var SpaceSApp = React.createClass({
+
+  getInitialState: function() {
+    return ( {
+      venueType: "cafe",
+      wifi: true,
+      open: true
+      // distance: less than 5 miles, etc
+    } );
+  },
+
   render: function() {
     return (
-      <div className='main'>
-        <ReactTransitionGroup transitionName="fade">
-          <img src={imageURL} />
-        </ReactTransitionGroup>
+      <div id='app'>
+        HELLO
+        <Filter />
+        <Search />
+        <Map />
+        <Result />
       </div>
     );
   }
