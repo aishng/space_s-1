@@ -25,11 +25,31 @@ var SpaceSApp = React.createClass({
     } );
   },
 
+  getFilters: function() {
+    return [
+      {
+        filterLabel : "Has Wifi"
+      },
+      { 
+        filterLabel : "Is Open Now"
+      }
+      // {
+      //   filterLabel : "Less than 1 mile away"
+      // }
+    ];
+  },
+
   render: function() {
+    var data = this.getFilters();
+
+    var filters = data.map(function(filter) {
+      return <Filter filter={filter.filterLabel} />
+    });
+
     return (
       <div id='app'>
         HELLO
-        <Filter />
+        {filters}
         <Search />
         <Map />
         <Result />

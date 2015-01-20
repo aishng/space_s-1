@@ -6,14 +6,23 @@ var Filter = React.createClass({
   
   getInitialState: function() {
     return {
-      value: ''
+      value: true
     };
+  },
+
+  handleClick: function (e) {
+    if (this.state.value === true) {
+      this.setState({value: false });
+    } 
+    console.log(this.state.value);
   },
 
   render: function() {
     return (
       <div id='filter'>
-        <input type='checkbox' placeholder={ this.props.filter }>FILTER</input>
+        <input type='checkbox' onClick={this.handleClick}>
+          <label> {this.props.filter} </label>
+        </input>
       </div>
     );
   }
