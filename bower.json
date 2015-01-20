@@ -1,0 +1,17 @@
+{
+  "name": "space_s",
+  "version": "0.0.1",
+  "authors": [
+    "Roxanne Ravago <rcr79@cornell.edu>"
+  ],
+  "description": "app for finding an alternative space to work",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
