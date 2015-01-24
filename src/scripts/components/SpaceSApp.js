@@ -39,11 +39,18 @@ var SpaceSApp = React.createClass({
     ];
   },
 
+  handleFilterClick: function (e) {
+    if (this.state.value === true) {
+      this.setState({value: false });
+    } 
+    console.log(this.state.value);
+  },
+
   render: function() {
     var data = this.getFilters();
 
     var filters = data.map(function(filter) {
-      return <Filter filter={filter.filterLabel} />
+      return <Filter onClick={this.handleFilterClick} filter={filter.filterLabel} />
     });
 
     return (

@@ -4,23 +4,23 @@ var React   = require('react');
 
 var Filter = React.createClass({
   
-  getInitialState: function() {
-    return {
-      value: true
-    };
-  },
+  // getInitialState: function() {
+  //   return {
+  //     value: true
+  //   };
+  // },
 
-  handleClick: function (e) {
-    if (this.state.value === true) {
-      this.setState({value: false });
-    } 
-    console.log(this.state.value);
-  },
+  // handleClick: function (e) {
+  //   if (this.state.value === true) {
+  //     this.setState({value: false });
+  //   } 
+  //   console.log(this.state.value);
+  // },
 
   render: function() {
     return (
       <div id='filter'>
-        <input type='checkbox' onClick={this.handleClick}>
+        <input type='checkbox'>
           <label> {this.props.filter} </label>
         </input>
       </div>
