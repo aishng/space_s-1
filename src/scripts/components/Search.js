@@ -6,14 +6,24 @@ var Search = React.createClass({
   
   getInitialState: function() {
     return {
-      value: ''
+      query: ''
     };
+  },
+
+  logQuery: function() {
+      var searchInput = (this.refs['searchInput'].getDOMNode().value);
+      this.setState({ query: searchInput });
+      console.log("query state is: " + this.state.query);
   },
 
   render: function() {
     return (
       <div id='searchBar'>
-        <input type='text' placeholder='find a space to work'></input>
+        <form>
+          <input onKeyDown={this.logQuery} ref="searchInput" placeholder="find a space to work" />
+          <input type="hidden" name="lat" value="" id="lat" />
+          <input type="hidden" name="lng" value="" id="lng" />
+        </form>
       </div>
     );
   }
